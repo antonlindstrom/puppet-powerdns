@@ -1,0 +1,6 @@
+name 'antonl-powerdns'
+version '0.0.1'
+author 'Anton Lindström'
+summary 'Module for managing PowerDNS'
+description 'Installs and manages PowerDNS'
+license 'GPLv2'
