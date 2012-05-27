@@ -5,17 +5,16 @@ class powerdns($ensure = 'present') {
     'absent'  => 'stopped',
   }
 
-  package { 'powerdns':
+  package { 'pdns-server':
     ensure => $ensure,
-    name   => 'pdns-server',
   }
 
-  service { 'powerdns':
+  service { 'pdns':
     ensure      => $ensure_service,
-    name        => 'pdns',
     enable      => true,
     hasrestart  => true,
     hasstatus   => true,
+    require     => Package['pdns-server'],
   }
 
 #  file { '/etc/powerdns/pdns.conf':
@@ -24,7 +23,7 @@ class powerdns($ensure = 'present') {
 #    group   => root,
 #    mode    => '0644',
 #    content => template('powerdns/pdns.conf.erb'),
-#    notify  => Service['powerdns'],
+#    notify  => Service['pdns'],
 #  }
 
 }

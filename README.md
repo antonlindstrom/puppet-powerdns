@@ -5,7 +5,17 @@ Ad-hoc for simplicity and our use-cases.
 
 #### powerdns
 
-	include powerdns
+    include powerdns
+
+#### powerdns::postgresql
+
+This will install the postgresql backend for powerdns:
+
+    class { 'powerdns::postgresql':
+      user  => 'powerdns'
+    }
+
+To be able to use it without importing data and without hassle, make sure that Postgres is installed before the `powerdns::postgresql` class.
 
 ## Testing
 
