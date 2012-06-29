@@ -7,6 +7,22 @@ Ad-hoc for simplicity and our use-cases.
 
     include powerdns
 
+#### powerdns::config
+
+Set configuration settings in a pdns.d directory (this assumes that you have `include=/etc/powerdns/pdns.d` in pdns.conf).
+
+    powerdns::config { 'cache-ttl':
+      ensure => present,
+      value  => 20,
+    }
+
+Or, set IPv6 address:
+
+    powerdns::config { 'local-ipv6':
+      ensure => present,
+      value  => $::ipaddress6,
+    }
+
 #### powerdns::postgresql
 
 This will install the postgresql backend for powerdns:
