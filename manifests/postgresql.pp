@@ -1,10 +1,10 @@
 class powerdns::postgresql(
-  $user='',
-  $password='',
-  $host='localhost',
-  $port='5432',
-  $dbname='pdns',
-  $ensure='present'
+  $ensure   = 'present',
+  $user     = '',
+  $password = '',
+  $host     = 'localhost',
+  $port     = '5432',
+  $dbname   = 'pdns'
 ) {
 
   package { 'pdns-backend-pgsql':

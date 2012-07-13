@@ -1,5 +1,6 @@
 # PowerDNS module
-Ad-hoc for simplicity and our use-cases.
+
+[![Build Status](https://secure.travis-ci.org/antonlindstrom/puppet-powerdns.png?branch=master)](http://travis-ci.org/antonlindstrom/puppet-powerdns)
 
 ## Usage
 
@@ -28,7 +29,12 @@ Or, set IPv6 address:
 This will install the postgresql backend for powerdns:
 
     class { 'powerdns::postgresql':
-      user  => 'powerdns'
+      ensure   => present,
+      user     => 'powerdns',
+      password => 'secret',
+      host     => 'localhost',
+      port     => '5432',
+      dbname   => 'pdns',
     }
 
 To be able to use it without importing data and without hassle, make sure that Postgres is installed before the `powerdns::postgresql` class.
