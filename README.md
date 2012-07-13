@@ -2,6 +2,8 @@
 
 [![Build Status](https://secure.travis-ci.org/antonlindstrom/puppet-powerdns.png?branch=master)](http://travis-ci.org/antonlindstrom/puppet-powerdns)
 
+This is a module to manage PowerDNS with Puppet. The configuration is split into several files and put in `/etc/powerdns/pdns.d`. This makes it easy to read which configurations are currently modified.
+
 ## Usage
 
 #### powerdns

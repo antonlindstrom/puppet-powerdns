@@ -9,7 +9,7 @@ describe 'powerdns::config', :type => :define do
     'owner'   => 'root',
     'group'   => 'root',
     'mode'    => '0700',
-    'content' => "cache-ttl=20",
+    'content' => "cache-ttl=20"
   ) end
 
 end
