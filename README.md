@@ -37,7 +37,10 @@ This will install the postgresql backend for powerdns:
       host     => 'localhost',
       port     => '5432',
       dbname   => 'pdns',
+      dnssec   => 'no',
     }
+
+The `dnssec` value can be either 'yes' or 'no'. Default is 'yes'..
 
 To be able to use it without importing data and without hassle, make sure that Postgres is installed before the `powerdns::postgresql` class.
 

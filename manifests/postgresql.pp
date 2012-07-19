@@ -4,7 +4,8 @@ class powerdns::postgresql(
   $password = '',
   $host     = 'localhost',
   $port     = '5432',
-  $dbname   = 'pdns'
+  $dbname   = 'pdns',
+  $dnssec   = 'yes'
 ) {
 
   package { 'pdns-backend-pgsql':
@@ -12,7 +13,7 @@ class powerdns::postgresql(
     require => Package['pdns-server'],
   }
 
-  file { '/etc/powerdns/pdns.d/pdns.local':
+  file { '/etc/powerdns/pdns.d/pdns.local.gpgsql':
     ensure  => $ensure,
     owner   => root,
     group   => root,
