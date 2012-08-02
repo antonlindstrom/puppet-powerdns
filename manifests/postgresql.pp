@@ -22,13 +22,17 @@ class powerdns::postgresql(
     notify  => Service['pdns'],
     require => Package['pdns-server'],
   }
-
+  
   file { '/opt/powerdns_schema.sql':
     ensure  => $ensure,
     owner   => root,
     group   => root,
     mode    => '0644',
-    source  => 'puppet:///modules/powerdns/postgresql_schema.sql',
+    source  => $dnssec ? {
+  	  /(yes|true)/ => 'puppet:///modules/powerdns/postgresql_schema.dnssec.sql',
+  	  /(no|false)/ => 'puppet:///modules/powerdns/postgresql_schema.sql',
+  	  default      => 'puppet:///modules/powerdns/postgresql_schema.sql'
+  	}
   }
 
 }
