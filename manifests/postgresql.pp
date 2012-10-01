@@ -32,11 +32,12 @@ class powerdns::postgresql(
     source   => $package_source
   }
 
-  file { '/etc/powerdns/pdns.d/pdns.local.gpgsql':
+  file { $powerdns::params::postgresql_cfg_path:
     ensure  => $ensure,
     owner   => root,
     group   => root,
     mode    => '0600',
+    backup  => '.bak',
     content => template('powerdns/pdns.pgsql.local.erb'),
     notify  => Service['pdns'],
     require => Package[$powerdns::params::package],

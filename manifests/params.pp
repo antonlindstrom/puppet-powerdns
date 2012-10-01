@@ -15,4 +15,9 @@ class powerdns::params {
     default              => 'pdns-backend-pgsql'
   }
 
+  $postgresql_cfg_path = $::operatingsystem ? {
+    /(?i:centos|redhat)/ => '/etc/pdns/pdns.conf',
+    default              => '/etc/powerdns/pdns.d/pdns.local.gpgsql'
+  }
+
 }
