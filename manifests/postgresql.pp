@@ -27,7 +27,7 @@ class powerdns::postgresql(
 
   package { $package:
     ensure   => $ensure,
-    require  => Package['pdns-server'],
+    require  => Package[$powerdns::params::package],
     provider => $package_provider,
     source   => $package_source
   }
@@ -39,7 +39,7 @@ class powerdns::postgresql(
     mode    => '0600',
     content => template('powerdns/pdns.pgsql.local.erb'),
     notify  => Service['pdns'],
-    require => Package['pdns-server'],
+    require => Package[$powerdns::params::package],
   }
 
   file { '/opt/powerdns_schema.sql':
