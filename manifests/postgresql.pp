@@ -1,21 +1,35 @@
 class powerdns::postgresql(
+  $package  = $powerdns::params::package_psql,
   $ensure   = 'present',
+  $source   = '',
   $user     = '',
   $password = '',
   $host     = 'localhost',
   $port     = '5432',
   $dbname   = 'pdns',
   $dnssec   = 'yes'
-) {
+) inherits powerdns::params {
 
   $postgres_schema = $dnssec ? {
     /(yes|true)/ => 'puppet:///modules/powerdns/postgresql_schema.dnssec.sql',
     default      => 'puppet:///modules/powerdns/postgresql_schema.sql'
   }
 
-  package { 'pdns-backend-pgsql':
-    ensure  => $ensure,
-    require => Package['pdns-server'],
+  $package_source = $source ? {
+    ''      => undef,
+    default => $source
+  }
+
+  $package_provider = $source ? {
+    ''      => undef,
+    default => $powerdns::params::package_provider
+  }
+
+  package { $package:
+    ensure   => $ensure,
+    require  => Package['pdns-server'],
+    provider => $package_provider,
+    source   => $package_source
   }
 
   file { '/etc/powerdns/pdns.d/pdns.local.gpgsql':

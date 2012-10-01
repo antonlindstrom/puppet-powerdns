@@ -1,7 +1,23 @@
-class powerdns::package($ensure = 'present') {
+class powerdns::package(
+  $package = $powerdns::params::package,
+  $ensure = 'present',
+  $source = ''
+) inherits powerdns::params {
 
-  package { 'pdns-server':
-    ensure => $ensure,
+  $package_source = $source ? {
+    ''      => undef,
+    default => $source
+  }
+
+  $package_provider = $source ? {
+    ''      => undef,
+    default => $powerdns::params::package_provider
+  }
+
+  package { $package:
+    ensure   => $ensure,
+    source   => $package_source,
+    provider => $package_provider 
   }
 
 }
