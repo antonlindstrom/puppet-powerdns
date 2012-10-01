@@ -1,6 +1,6 @@
 {
   "name": "antonl-powerdns",
-  "author": "Anton LindstrÃ¶m",
+  "author": "Anton Lindström",
   "description": "Installs and manages PowerDNS",
   "license": "GPLv2",
   "project_page": "",
@@ -10,13 +10,13 @@
   "checksums": {
     "Gemfile": "b3ce58ea784107e05177ff99b6ac8bc7",
     "Gemfile.lock": "64a08b6ccbf7442f2fcdf04b9904c464",
-    "Modulefile": "a588c0300e5269df643b294b91a75137",
+    "Modulefile": "ff78d6b144859273e0aa34c89adba669",
     "README.md": "5e698db00b313d2b188a556575cede6d",
     "Rakefile": "c0b930ce886ec7721f51dad134ab8c63",
     "files\\postgresql_schema.dnssec.sql": "175ddadd1bdde275e49b634868b56ab2",
     "files\\postgresql_schema.sql": "3193c9102b4d6ed4d54423062064b219",
     "manifests\\config.pp": "2eba40f54d6e93fd11ccc342b07a2ee9",
-    "manifests\\init.pp": "c53eb1ce96db263361decb61828f3f0d",
+    "manifests\\init.pp": "00b9012510b7aea33c2f1708221d7f4f",
     "manifests\\package.pp": "51293e74e97d457b3b053b24dce813cf",
     "manifests\\params.pp": "9a9c6b292ea83f099d7ebe51fa3a90ae",
     "manifests\\postgresql.pp": "b8902a47cc9c543d71968868d971e1d1",
