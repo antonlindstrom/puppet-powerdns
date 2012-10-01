@@ -19,7 +19,7 @@
     "manifests\\init.pp": "c53eb1ce96db263361decb61828f3f0d",
     "manifests\\package.pp": "51293e74e97d457b3b053b24dce813cf",
     "manifests\\params.pp": "9a9c6b292ea83f099d7ebe51fa3a90ae",
-    "manifests\\postgresql.pp": "41747642b015a20639ca1acc3616eec9",
+    "manifests\\postgresql.pp": "b8902a47cc9c543d71968868d971e1d1",
     "manifests\\service.pp": "9bdde3b117209745c73be20ea71a4fa2",
     "spec\\classes\\powerdns__package_spec.rb": "8e78711d7bab0efc3ffd163666eddebc",
     "spec\\classes\\powerdns__postgresql_spec.rb": "3e7a2ff88906cd0481f7955fed7f64f7",

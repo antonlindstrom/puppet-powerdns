@@ -47,7 +47,7 @@ class powerdns::postgresql(
     owner   => root,
     group   => root,
     mode    => '0644',
-    source  => $postgres_schema,
+    source  => $postgres_schema
   }
 
 }
