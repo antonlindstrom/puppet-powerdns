@@ -1,12 +1,18 @@
 class powerdns::params {
 
-  $package = 'pdns-server'
+  $package = $::operatingsystem ? {
+    /(?i:centos|redhat)/ => 'pdns',
+    default              => 'pdns-server'
+  }
 
   $package_provider = $::operatingsystem ? {
     /(?i:centos|redhat)/  => 'rpm',
     default               => 'dpkg'
   }
 
-  $package_psql = 'pdns-backend-pgsql'
+  $package_psql = $::operatingsystem ? {
+    /(?i:centos|redhat)/ => 'pdns-backend-postgresql',
+    default              => 'pdns-backend-pgsql'
+  }
 
 }
