@@ -30,7 +30,7 @@
     "spec\\fixtures\\modules\\powerdns": "6c196513838facc8a850bb15ed0e4b51",
     "spec\\spec_helper.rb": "b9ad6e9aec593c7dfd8af0a13593b48f",
     "templates\\pdns.conf.erb": "d41d8cd98f00b204e9800998ecf8427e",
-    "templates\\pdns.pgsql.local.erb": "3e7eb0ca4abea16dd4a94f4811956a30",
+    "templates\\pdns.pgsql.local.erb": "e2c556a6a3195bcb5c8512c5d5907e41",
     "tests\\config.pp": "64d4af499424daf2252eed40992ea0d7",
     "tests\\init.pp": "c9d3ba010ca46e3c7162f871a5bd3c35"
   },
