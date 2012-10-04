@@ -1,8 +1,10 @@
-class powerdns::service($ensure = 'present') {
+class powerdns::service(
+  $ensure = 'present'
+) {
 
   $ensure_service = $ensure ? {
     'present' => 'running',
-    'absent'  => 'stopped',
+    default   => 'stopped'
   }
 
   service { 'pdns':
@@ -10,7 +12,7 @@ class powerdns::service($ensure = 'present') {
     enable      => true,
     hasrestart  => true,
     hasstatus   => true,
-    require     => Class['powerdns::package'],
+    require     => Class['powerdns::package']
   }
 
 }
