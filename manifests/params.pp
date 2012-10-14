@@ -1,3 +1,9 @@
+# Internal: Set default parameters
+#
+# Example:
+#
+#    include powerdns::params
+#
 class powerdns::params {
 
   $package = $::operatingsystem ? {

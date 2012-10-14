@@ -1,3 +1,9 @@
+# Internal: Ensure the service to be either started or stopped
+#
+# Example:
+#
+#    include powerdns::service
+#
 class powerdns::service(
   $ensure = 'present'
 ) {
