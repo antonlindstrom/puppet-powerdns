@@ -50,5 +50,7 @@ To be able to use it without importing data and without hassle, make sure that P
     bundle install
     bundle exec rake
 
+Dependencies are downloaded and used with [librarian-puppet](https://github.com/rodjek/librarian-puppet). If adding new dependencies, please add them in the `Puppetfile` and `Modulefile`, thanks!
+
 ## Contribute
 Send pull request and add tests. Make sure all tests pass (modify if you need) and make sure it's style-guide compliant.
