@@ -7,6 +7,6 @@ gem 'puppet', puppetversion
 group :test do
   gem 'rake'
   gem 'puppet-lint'
-  gem 'rspec-puppet', '>= 0.1.3'
-  gem 'librarian-puppet'
+  gem 'rspec-puppet', '= 0.1.4'
+  gem 'librarian-puppet', '>= 0.9.7'
 end
