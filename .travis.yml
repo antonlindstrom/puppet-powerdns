@@ -10,5 +10,4 @@ notifications:
   email:
     - anton@alley.se
 env:
-  - PUPPET_VERSION=2.7.1
   - PUPPET_VERSION=2.7.19
