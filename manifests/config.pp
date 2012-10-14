@@ -1,3 +1,16 @@
+# Public: Set confguration directives in a .d directory
+#
+# name   - Name of the configuration directive, for example cache-ttl
+# value  - Value of the config, for cache-ttl it could be 20
+# ensure - Ensure it to be either present or absent
+#
+# Example:
+#
+#    powerdns::config { 'cache-ttl':
+#      ensure => present,
+#      value  => 20,
+#    }
+#
 define powerdns::config($value, $ensure='present') {
 
   file { "/etc/powerdns/pdns.d/${name}.conf":

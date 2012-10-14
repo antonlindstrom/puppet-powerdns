@@ -1,3 +1,9 @@
+# Internal: Install the powerdns package
+#
+# Example:
+#
+#    include powerdns::package
+#
 class powerdns::package(
   $package = $powerdns::params::package,
   $ensure = 'present',
