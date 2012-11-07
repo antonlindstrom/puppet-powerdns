@@ -21,9 +21,19 @@ class powerdns::params {
     default              => 'pdns-backend-pgsql'
   }
 
+  $package_mysql = $::operatingsystem ? {
+    /(?i:centos|redhat)/ => 'pdns-backend-mysql',
+    default              => 'pdns-backend-mysql'
+  }
+
   $postgresql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.gpgsql'
+  }
+
+  $mysql_cfg_path = $::operatingsystem ? {
+    /(?i:centos|redhat)/ => '/etc/pdns/pdns.conf',
+    default              => '/etc/powerdns/pdns.d/pdns.local.mysql'
   }
 
 }
