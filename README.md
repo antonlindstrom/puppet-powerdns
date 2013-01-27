@@ -44,6 +44,22 @@ The `dnssec` value can be either 'yes' or 'no'. Default is 'yes'..
 
 To be able to use it without importing data and without hassle, make sure that Postgres is installed before the `powerdns::postgresql` class.
 
+#### powerdns::mysql
+
+This will install the mysql backend for powerdns:
+
+    class { 'powerdns::mysql':
+      ensure   => present,
+      user     => 'powerdns',
+      password => 'secret',
+      host     => 'localhost',
+      port     => '3306',
+      dbname   => 'pdns',
+      dnssec   => 'no',
+    }
+
+The `dnssec` value can be either 'yes' or 'no'. Default is 'yes'.
+
 ## Testing
 
     gem install bundler
