@@ -12,7 +12,7 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts  = '--color'
 end
 
-desc 'Install dependencies with librarion-puppet'
+desc 'Install dependencies with librarian-puppet'
 task :dependencies do
   sh 'librarian-puppet install --path spec/fixtures/modules'
 end
