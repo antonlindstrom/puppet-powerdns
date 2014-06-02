@@ -4,7 +4,7 @@ describe 'powerdns::config', :type => :define do
   let(:title) { 'cache-ttl' }
   let(:params) { { :value => '20' } }
 
-  it do should contain_file('cache-ttl.conf').with(
+  it do should contain_file('/etc/pdns/conf.d/cache-ttl.conf').with(
 
     'ensure'  => 'present',
     'owner'   => 'root',
