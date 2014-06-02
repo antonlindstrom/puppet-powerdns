@@ -6,8 +6,10 @@
 launch=gpgsql
 
 # gpgsql parameters
-gpgsql-host=<%= host %>
-gpgsql-port=<%= port %>
-gpgsql-dbname=<%= dbname %>
-gpgsql-user=<%= user %>
-gpgsql-password=<%= password %>
+gpgsql-host=<%= @host %>
+gpgsql-port=<%= @port %>
+gpgsql-dbname=<%= @dbname %>
+gpgsql-user=<%= @user %>
+gpgsql-password=<%= @password %>
+
+include=<%= @cfg_include_path %>
