@@ -13,8 +13,9 @@
 #
 define powerdns::config($value, $ensure='present') {
 
-  file { "${powerdns::params::cfg_include_path}/${name}.conf":
+  file { "${name}.conf":
     ensure  => $ensure,
+    path    => "${powerdns::params::cfg_include_path}/${name}.conf",
     owner   => 'root',
     group   => 'root',
     mode    => '0700',
