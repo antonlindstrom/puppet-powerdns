@@ -36,6 +36,11 @@ class powerdns::params {
     default              => '/etc/powerdns/pdns.d/pdns.local.mysql'
   }
 
+  $cfg_include_name = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => 'include-dir',
+    default              => 'include'
+  }
+
   $cfg_include_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/conf.d',
     default              => '/etc/powerdns/pdns.d'
