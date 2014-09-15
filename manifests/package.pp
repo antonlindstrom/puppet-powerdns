@@ -27,10 +27,11 @@ class powerdns::package(
   }
 
   file { $cfg_include_path :
-    ensure => directory,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0755',
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+    require => Package[$package],
   }
 
 }
