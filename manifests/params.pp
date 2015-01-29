@@ -28,12 +28,12 @@ class powerdns::params {
 
   $postgresql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
-    default              => '/etc/powerdns/pdns.d/pdns.local.gpgsql'
+    default              => '/etc/powerdns/pdns.d/pdns.local.gpgsql.conf'
   }
 
   $mysql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
-    default              => '/etc/powerdns/pdns.d/pdns.local.mysql'
+    default              => '/etc/powerdns/pdns.d/pdns.local.gmysql.conf'
   }
 
   $cfg_include_name = $::operatingsystem ? {
