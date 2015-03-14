@@ -19,7 +19,7 @@ define powerdns::config($value, $ensure='present') {
     owner   => 'root',
     group   => 'root',
     mode    => '0700',
-    content => "${name}=${value}",
+    content => "${name}=${value}\n",
     require => Class['powerdns::package'],
     notify  => Class['powerdns::service'],
   }
