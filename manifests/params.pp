@@ -26,6 +26,11 @@ class powerdns::params {
     default              => 'pdns-backend-mysql'
   }
 
+  $package_ldap = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => 'pdns-backend-ldap',
+    default              => 'pdns-backend-ldap'
+  }
+
   $postgresql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.gpgsql.conf'
@@ -34,6 +39,11 @@ class powerdns::params {
   $mysql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.gmysql.conf'
+  }
+
+  $ldap_cfg_path = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
+    default              => '/etc/powerdns/pdns.d/pdns.local.ldap.conf'
   }
 
   $cfg_include_name = $::operatingsystem ? {
