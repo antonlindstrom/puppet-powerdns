@@ -31,6 +31,11 @@ class powerdns::params {
     default              => 'pdns-backend-ldap'
   }
 
+  $package_recursor = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => 'pdns-recursor',
+    default              => 'pdns-recursor'
+  }
+
   $postgresql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.gpgsql.conf'
@@ -44,6 +49,11 @@ class powerdns::params {
   $ldap_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.ldap.conf'
+  }
+
+  $recursor_cfg_path = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => '/etc/pdns/recursor.conf',
+    default              => '/etc/powerdns/recursor.conf'
   }
 
   $cfg_include_name = $::operatingsystem ? {
