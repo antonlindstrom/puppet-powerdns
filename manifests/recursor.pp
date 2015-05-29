@@ -6,10 +6,14 @@ class powerdns::recursor(
   $forward_zones_recurse = undef,
   $local_address         = '127.0.0.1',
   $local_port            = '53',
+  $log_common_errors     = 'yes',
+  $logging_facility      = undef,
+  $max_negative_ttl      = undef,
   $quiet                 = 'yes',
   $setgid                = 'pdns',
   $setuid                = 'pdns',
-  $max_negative_ttl      = undef,
+  $trace                 = 'off',
+
 ) inherits powerdns::params {
 
   require ::powerdns

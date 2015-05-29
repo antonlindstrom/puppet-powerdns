@@ -128,11 +128,15 @@ local-port=<%= @local_port %>
 # log-common-errors If we should log rather common errors
 #
 # log-common-errors=yes
+log-common-errors=<%= @log_common_errors %>
 
 #################################
 # logging-facility  Facility to log messages as. 0 corresponds to local0
 #
 # logging-facility=
+<%- if @logging_facility -%>
+logging-facility=<%= @logging_facility %>
+<%- end -%>
 
 #################################
 # lua-dns-script  Filename containing an optional 'lua' script that will be used to modify dns answers
@@ -301,6 +305,7 @@ setuid=<%= @setuid %>
 # trace if we should output heaps of logging
 #
 # trace=off
+trace=<%= @trace %>
 
 #################################
 # version-string  string reported on version.pdns or version.bind
