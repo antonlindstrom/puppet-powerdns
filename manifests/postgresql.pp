@@ -56,11 +56,11 @@ class powerdns::postgresql(
   }
 
   file { '/opt/powerdns_schema.sql':
-    ensure  => $ensure,
-    owner   => root,
-    group   => root,
-    mode    => '0644',
-    source  => $postgres_schema
+    ensure => $ensure,
+    owner  => root,
+    group  => root,
+    mode   => '0644',
+    source => $postgres_schema
   }
 
 }

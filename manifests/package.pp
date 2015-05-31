@@ -26,7 +26,7 @@ class powerdns::package(
     provider => $package_provider
   }
 
-  file { $cfg_include_path :
+  file { $powerdns::params::cfg_include_path :
     ensure  => directory,
     owner   => 'root',
     group   => 'root',

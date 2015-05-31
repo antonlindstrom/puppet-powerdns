@@ -1,3 +1,28 @@
+# Public: Install the powerdns-recursor server
+#
+# package - Name of the package to install
+# ensure  - Ensure powerdns to be present or absent
+# source  - Source package of powerdns server,
+#           default is package provider
+#
+# configs used into the template:
+#   forward_zones
+#   forward_zones_recurse
+#   local_address
+#   local_port
+#   log_common_errors
+#   logging_facility
+#   max_negative_ttl
+#   quiet
+#   setgid
+#   setuid
+#   trace
+#
+# Example:
+#
+#    # Include with default
+#    include powerdns::recursor
+#
 class powerdns::recursor(
   $package               = $powerdns::params::package_recursor,
   $ensure                = 'present',
@@ -51,11 +76,11 @@ class powerdns::recursor(
   }
 
   service { 'pdns-recursor':
-    ensure      => $ensure_service,
-    enable      => true,
-    hasrestart  => true,
-    hasstatus   => true,
-    require     => Package[$package],
+    ensure     => $ensure_service,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+    require    => Package[$package],
   }
 }
 
