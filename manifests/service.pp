@@ -14,11 +14,11 @@ class powerdns::service(
   }
 
   service { 'pdns':
-    ensure      => $ensure_service,
-    enable      => true,
-    hasrestart  => true,
-    hasstatus   => true,
-    require     => Class['powerdns::package']
+    ensure     => $ensure_service,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+    require    => Class['powerdns::package']
   }
 
 }
