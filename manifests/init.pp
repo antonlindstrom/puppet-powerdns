@@ -20,8 +20,9 @@ class powerdns(
   }
 
   class { 'powerdns::package':
-    ensure => $ensure,
-    source => $source
+    ensure  => $ensure,
+    source  => $source,
+    package => $package,
   }
 
   class { 'powerdns::service':
