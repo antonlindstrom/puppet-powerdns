@@ -11,7 +11,8 @@
 #
 class powerdns(
   $ensure = 'present',
-  $source = ''
+  $source = '',
+  $package = $powerdns::params::package
 ) {
 
   anchor { 'powerdns::begin': ;
@@ -19,8 +20,9 @@ class powerdns(
   }
 
   class { 'powerdns::package':
-    ensure => $ensure,
-    source => $source
+    ensure  => $ensure,
+    source  => $source,
+    package => $package,
   }
 
   class { 'powerdns::service':
