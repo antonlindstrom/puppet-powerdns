@@ -1,0 +1,14 @@
+{
+  "name": "antonlindstrom-powerdns",
+  "version": "0.0.5",
+  "author": "Anton Lindstrom",
+  "summary": "Module for managing PowerDNS",
+  "license": "GPLv2",
+  "source": "https://github.com/antonlindstrom/puppet-powerdns",
+  "project_page": "https://github.com/antonlindstrom/puppet-powerdns",
+  "issues_url": "https://github.com/antonlindstrom/puppet-powerdns",
+  "description": "Installs and manages PowerDNS",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib"}
+  ]
+}
