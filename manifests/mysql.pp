@@ -1,7 +1,7 @@
 # Public: Install the powerdns mysql backend
 #
 # package  - which package to install
-# ensure   - ensure postgres backend to be present or absent
+# ensure   - ensure mysql backend to be present or absent
 # source   - where to get the package from
 # user     - which user powerdns should connect as
 # password - which password to use with user
