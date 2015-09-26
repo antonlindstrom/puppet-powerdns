@@ -7,7 +7,7 @@ describe 'powerdns::mysql', :type => :class do
   end
 
   it do
-    should contain_file('/etc/powerdns/pdns.d/pdns.local.mysql').with_ensure('present')
+    should contain_file('/etc/powerdns/pdns.d/pdns.local.gmysql.conf').with_ensure('present')
   end
 
 end
