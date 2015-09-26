@@ -1,8 +1,9 @@
 # Public: Install the powerdns server
 #
-# ensure - Ensure powerdns to be present or absent
-# source - Source package of powerdns server,
-#          default is package provider
+# ensure       - Ensure powerdns to be present or absent
+# source       - Source package of powerdns server,
+#                default is package provider
+# purge_config - Delete configuration files which are not managed with powerdns::config
 #
 # Example:
 #
@@ -10,8 +11,9 @@
 #    include powerdns
 #
 class powerdns(
-  $ensure = 'present',
-  $source = ''
+  $ensure       = 'present',
+  $source       = '',
+  $purge_config = false,
 ) {
 
   anchor { 'powerdns::begin': ;
@@ -19,8 +21,9 @@ class powerdns(
   }
 
   class { 'powerdns::package':
-    ensure => $ensure,
-    source => $source
+    ensure       => $ensure,
+    source       => $source,
+    purge_config => $purge_config,
   }
 
   class { 'powerdns::service':

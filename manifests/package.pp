@@ -5,9 +5,10 @@
 #    include powerdns::package
 #
 class powerdns::package(
-  $package = $powerdns::params::package,
-  $ensure = 'present',
-  $source = ''
+  $package      = $powerdns::params::package,
+  $ensure       = 'present',
+  $source       = '',
+  $purge_config = false,
 ) inherits powerdns::params {
 
   $package_source = $source ? {
@@ -31,6 +32,8 @@ class powerdns::package(
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
+    recurse => $purge_config,
+    purge   => $purge_config,
     require => Package[$package],
   }
 
