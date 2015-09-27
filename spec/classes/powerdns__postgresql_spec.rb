@@ -7,7 +7,7 @@ describe 'powerdns::postgresql', :type => :class do
   end
 
   it do
-    should contain_file('/etc/powerdns/pdns.d/pdns.local.gpgsql').with_ensure('present')
+    should contain_file('/etc/powerdns/pdns.d/pdns.local.gpgsql.conf').with_ensure('present')
   end
 
   describe 'should include correct schema when dnssec is yes' do
