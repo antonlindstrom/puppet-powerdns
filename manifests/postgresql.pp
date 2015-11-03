@@ -29,6 +29,7 @@ class powerdns::postgresql(
     $postgres_schema = $dnssec ? {
       /(yes|true)/ => 'puppet:///modules/powerdns/postgresql_schema.dnssec.sql',
       default      => 'puppet:///modules/powerdns/postgresql_schema.sql'
+    }
   }
 
   $package_source = $source ? {
