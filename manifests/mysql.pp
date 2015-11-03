@@ -40,13 +40,14 @@ class powerdns::mysql(
   }
 
   file { $powerdns::params::mysql_cfg_path:
-    ensure  => $ensure,
-    owner   => root,
-    group   => root,
-    mode    => '0600',
-    backup  => '.bak',
-    content => template('powerdns/pdns.mysql.local.erb'),
-    notify  => Service['pdns'],
-    require => Package[$powerdns::params::package],
+    ensure    => $ensure,
+    owner     => root,
+    group     => root,
+    mode      => '0600',
+    show_diff => false,
+    backup    => '.bak',
+    content   => template('powerdns/pdns.mysql.local.erb'),
+    notify    => Service['pdns'],
+    require   => Package[$powerdns::params::package],
   }
 }
