@@ -16,15 +16,19 @@ class powerdns::postgresql(
   $source   = '',
   $user     = '',
   $password = '',
+  $version  = '',
   $host     = 'localhost',
   $port     = '5432',
   $dbname   = 'pdns',
   $dnssec   = 'yes'
 ) inherits powerdns::params {
 
-  $postgres_schema = $dnssec ? {
-    /(yes|true)/ => 'puppet:///modules/powerdns/postgresql_schema.dnssec.sql',
-    default      => 'puppet:///modules/powerdns/postgresql_schema.sql'
+  if $version == '3.4' {
+    $postgres_schema = 'puppet:///modules/powerdns/postgresql_schema_3.4.sql'
+  } else {
+    $postgres_schema = $dnssec ? {
+      /(yes|true)/ => 'puppet:///modules/powerdns/postgresql_schema.dnssec.sql',
+      default      => 'puppet:///modules/powerdns/postgresql_schema.sql'
   }
 
   $package_source = $source ? {
