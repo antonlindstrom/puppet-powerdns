@@ -1,0 +1,6 @@
+# This file is managed by Puppet.
+<% if @pdns_config != '' -%>
+<% @pdns_config.each_pair do |key,value| -%>
+<%= key %>=<%= value %> 
+<%end-%>
+<%end-%>

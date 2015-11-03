@@ -37,4 +37,14 @@ class powerdns::package(
     require => Package[$package],
   }
 
+  $pdns_config = hiera('pdns::config','')
+  file { "$powerdns::params::cfg_include_path/authoritive.conf":
+    ensure  => present,
+    content => template('powerdns/authoritive-conf.erb'),
+    owner   => 'root',
+    group   => 'root',
+    require => Package[$package],
+    notify  => Class['::powerdns::service']
+  }
+
 }
