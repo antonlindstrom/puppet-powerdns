@@ -12,6 +12,6 @@ gpgsql-dbname=<%= @dbname %>
 gpgsql-user=<%= @user %>
 gpgsql-password=<%= @password %>
 gpgsql-dnssec=<%= @dnssec %>
-<% if @osfamily == "Redhat" %>
+<% if @osfamily == "RedHat" %>
 <%= @cfg_include_name %>=<%= @cfg_include_path %>
 <% end %>
