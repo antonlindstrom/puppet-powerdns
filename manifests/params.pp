@@ -26,7 +26,7 @@ class powerdns::params {
     default              => 'pdns-backend-mysql'
   }
 
-  $package_slqite = $::operatingsystem ? {
+  $package_sqlite = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => 'pdns-backend-sqlite',
     default              => 'pdns-backend-sqlite'
   }
