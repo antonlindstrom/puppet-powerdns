@@ -51,7 +51,7 @@ class powerdns::params {
     default              => '/etc/powerdns/pdns.d/pdns.local.gmysql.conf'
   }
 
-  $mysql_cfg_path = $::operatingsystem ? {
+  $sqlite_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.gsqlite3.conf'
   }
