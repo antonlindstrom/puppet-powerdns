@@ -16,7 +16,7 @@ class powerdns::sqlite(
   $source   = '',
   $dnssec   = 'yes',
   $database_path = "/etc/pdns/pdns.db",
-  $sqlite-synchronous = 'off',
+  $sqlite_synchronous = 'off',
 ) inherits powerdns::params {
 
   $package_source = $source ? {
