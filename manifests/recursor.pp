@@ -25,6 +25,7 @@
 #
 class powerdns::recursor(
   $package               = $powerdns::params::package_recursor,
+  $recursor_cfg_path     = $powerdns::params::recursor_cfg_path,
   $ensure                = 'present',
   $source                = '',
   $forward_zones         = undef,
