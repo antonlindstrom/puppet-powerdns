@@ -25,7 +25,7 @@
 #
 class powerdns::recursor(
   $package               = $powerdns::params::package_recursor,
-  $recursor_cfg_path     = '',
+  $recursor_cfg_path     = $powerdns::params::recursor_cfg_path,
   $ensure                = 'present',
   $source                = '',
   $forward_zones         = undef,
@@ -61,7 +61,7 @@ class powerdns::recursor(
     source   => $package_source
   }
 
-  file { $powerdns::params::recursor_cfg_path:
+  file { $recursor_cfg_path:
     ensure  => $ensure,
     owner   => root,
     group   => root,
