@@ -8,6 +8,9 @@
 # allow-from  If set, only allow these comma separated netmasks to recurse
 #
 # allow-from=127.0.0.0/8, 10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, ::1/128, fe80::/10
+<%- if @allow_from -%>
+allow-from=<%= @allow_from.join(',') %>
+<%- end -%>
 
 #################################
 # allow-from-file If set, load allowed netmasks from this file
