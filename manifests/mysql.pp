@@ -41,9 +41,9 @@ class powerdns::mysql(
 
   file { $powerdns::params::mysql_cfg_path:
     ensure    => $ensure,
-    owner     => root,
-    group     => root,
-    mode      => '0600',
+    owner     => 'root',
+    group     => 'pdns',
+    mode      => '0644',
     show_diff => false,
     content   => template('powerdns/pdns.mysql.local.erb'),
     notify    => Service['pdns'],
