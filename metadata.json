@@ -1,6 +1,6 @@
 {
   "name": "antonlindstrom-powerdns",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Anton Lindstrom",
   "summary": "Module for managing PowerDNS",
   "license": "GPLv3",

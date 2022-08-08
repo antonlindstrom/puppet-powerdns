@@ -8,6 +8,7 @@
 # configs used into the template:
 #   forward_zones
 #   forward_zones_recurse
+#   allow_from
 #   local_address
 #   local_port
 #   log_common_errors
@@ -25,10 +26,12 @@
 #
 class powerdns::recursor(
   $package               = $powerdns::params::package_recursor,
+  $recursor_cfg_path     = $powerdns::params::recursor_cfg_path,
   $ensure                = 'present',
   $source                = '',
   $forward_zones         = undef,
   $forward_zones_recurse = undef,
+  $allow_from            = undef,
   $local_address         = '127.0.0.1',
   $local_port            = '53',
   $log_common_errors     = 'yes',
@@ -60,7 +63,7 @@ class powerdns::recursor(
     source   => $package_source
   }
 
-  file { $powerdns::params::recursor_cfg_path:
+  file { $recursor_cfg_path:
     ensure  => $ensure,
     owner   => root,
     group   => root,

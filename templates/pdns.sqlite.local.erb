@@ -1,0 +1,20 @@
+# SQLite Configuration
+#
+# Managed by Puppet
+#
+# Launch gmysql backend
+launch=gsqlite3
+
+# gsqlite3 parameters
+gsqlite3-database=<%= @database_path %>
+
+<% if @synchronous %>
+gsqlite3-pragma-synchronous=<%= @synchronous %>
+<% end %>
+
+gsqlite3-dnssec=<%= @dnssec %>
+
+<% if @osfamily == "RedHat" %>       
+<%= @cfg_include_name %>=<%= @cfg_include_path %>
+<% end %>
+

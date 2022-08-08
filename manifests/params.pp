@@ -26,6 +26,11 @@ class powerdns::params {
     default              => 'pdns-backend-mysql'
   }
 
+  $package_sqlite = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => 'pdns-backend-sqlite',
+    default              => 'pdns-backend-sqlite'
+  }
+
   $package_ldap = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => 'pdns-backend-ldap',
     default              => 'pdns-backend-ldap'
@@ -44,6 +49,11 @@ class powerdns::params {
   $mysql_cfg_path = $::operatingsystem ? {
     /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
     default              => '/etc/powerdns/pdns.d/pdns.local.gmysql.conf'
+  }
+
+  $sqlite_cfg_path = $::operatingsystem ? {
+    /(?i:centos|redhat|amazon)/ => '/etc/pdns/pdns.conf',
+    default              => '/etc/powerdns/pdns.d/pdns.local.gsqlite3.conf'
   }
 
   $ldap_cfg_path = $::operatingsystem ? {
